@@ -3,6 +3,24 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
     android:horizontalSpacing="10dp"
     android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/TitleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+    	android:gravity="center"
+        android:ems="10" >
+
+        <requestFocus />
+    </TextView>
+
+    <ImageView
+        android:id="@+id/ExpandView"
+        android:layout_width="match_parent"
+        android:layout_height="244dp"
+        android:src="@drawable/ic_launcher" />
+
 </LinearLayout>

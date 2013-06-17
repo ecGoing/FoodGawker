@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
+import android.widget.TextView;
 
 public class ExpandActivity extends Activity {
 	private FoodSquare foodSquare;
@@ -28,17 +29,15 @@ public class ExpandActivity extends Activity {
     	
     	DisplayMetrics metrics = new DisplayMetrics();
     	getWindowManager().getDefaultDisplay().getMetrics(metrics);
-    	ImageView imageView = new ImageView(this);
-        imageView.setAdjustViewBounds(true);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+    	ImageView imageView = (ImageView)findViewById(R.id.ExpandView);
+    	TextView titleText = (TextView)findViewById(R.id.TitleText);
         
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
         layoutParams.gravity = Gravity.CENTER;
-    	imageView.setLayoutParams(layoutParams);
     	
+        titleText.setText(foodSquare.displayName);
     	imageView.setImageDrawable(drawable);
     	ActivityBridge.instance().cache.remove("Bitmap");
-    	this.addContentView(imageView, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.FILL_PARENT));
     	Log.d("TEST", foodSquare.url);
     }
 }
